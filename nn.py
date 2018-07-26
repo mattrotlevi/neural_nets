@@ -13,8 +13,7 @@ def sigmoid(x):
 	
 def sigmoid_p(x):
 	return sigmoid(x) * (1-sigmoid(x))	
-	
-	
+		
 def train():
 
 	w1 = np.random.randn()
@@ -55,9 +54,7 @@ def train():
 			w2_list.append(w2)
 			b_list.append(b)
 
-		
-		
-		
+			
 		dcost_dpred = 2 * (pred-target)
 		dpred_dz = sigmoid_p(z)
 		
@@ -74,6 +71,7 @@ def train():
 		w1 = w1 - learning_rate * dcost_dw1
 		w2 = w2 - learning_rate * dcost_dw2
 		b = b - learning_rate * dcost_db
+		
 	plt.plot(costs)
 	plt.plot(w1_list)
 	plt.plot(w2_list)
@@ -82,7 +80,6 @@ def train():
 	plt.show()
 		
 	return w1, w2, b
-
 
 def main():
 
